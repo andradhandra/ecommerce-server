@@ -14,10 +14,11 @@ module.exports =
       err.name == "ItemCannotBeFound"
       ) status = err.status
     
-    err.errors.forEach(error => {
-      errors.push(error.message)
-    })
-
+    if(err.errors) {
+      err.errors.forEach(error => {
+        errors.push(error.message)
+      })
+    } else errors.push(err)
     res.status(status).json({errors})
     
   }

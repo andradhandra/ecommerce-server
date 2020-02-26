@@ -56,6 +56,7 @@ describe('users routes', () => {
             expect(err).toBe(null)
             expect(response.status).toBe(400)
             expect(response.body).toHaveProperty('errors', expect.arrayContaining(["Wrong username / email / password"]))
+            // length errors dicek
             done()
           })
       })

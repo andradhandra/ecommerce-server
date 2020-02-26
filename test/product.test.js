@@ -90,7 +90,7 @@ describe("Product test", () => {
             .post('/products')
             .set('token', token2)
             .send({
-              name: 'Teslo model X',
+              name: 'Tesla model X',
               image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOSDJygafCAd-l7lTTvYS3QTf2B1inytMPefhwASq9Dcd-jxkz',
               price: 10000000000,
               stock: 10,

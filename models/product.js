@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
       //association can be found here
+      Product.belongsToMany(models.User, { through: models.Cart })
+      Product.hasMany(models.Cart)
       Product.belongsTo(models.Category)
     }
   }
@@ -37,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notNull: {
           msg: "Product stock cannot null"
+        },
+        min: {
+          args: 0,
+          msg: 'Stock depleted'
         }
       }
     },

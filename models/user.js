@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       //association can be found here
+      User.belongsToMany(models.Product, { through: models.Cart })
+      User.hasMany(models.Cart)
     }
   }
 
@@ -42,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     role: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      defaultValue: false
     }
   }, {
     sequelize,
