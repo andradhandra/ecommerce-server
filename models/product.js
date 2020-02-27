@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         min: {
           args: 0,
-          msg: 'Stock depleted'
+          msg: 'Product out of stock'
         }
       }
     },

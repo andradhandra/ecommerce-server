@@ -20,13 +20,13 @@ module.exports = {
     CategoryId: 1
   },{
     name: 'Samsung Galaxy Z Flip',
-    image_url: 'https://embedsocial.com/admin/story-media/feed-media/17908/17908034296408556/image_0_large.jpeg',
+    image_url: 'https://images.samsung.com/id/smartphones/galaxy-z-flip/images/galaxy-z-flip_accessories_img.jpg',
     price: 300000000,
     stock: 1000,
     CategoryId: 1
   },{
     name: 'Tesla model X',
-    image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOSDJygafCAd-l7lTTvYS3QTf2B1inytMPefhwASq9Dcd-jxkz',
+    image_url: 'https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC60TSS011C021001.jpg',
     price: 100000000,
     stock: 10,
     CategoryId: 2

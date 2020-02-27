@@ -90,23 +90,23 @@ class CartController {
 
         //pushing array of promises based on the carts
         carts.forEach(cart => {
-          promiseCart.push(new Promise(Cart.update({ status: true }, {
+          promiseCart.push(Cart.update({ status: true }, {
             where: {
               UserId: cart.UserId,
               ProductId: cart.ProductId
             },
             trasaction
-          })))
-          promiseProduct.push(new Promise(Product.decrement('stock', {
+          }))
+          promiseProduct.push(Product.decrement('stock', {
             by: cart.quantity,
             where: {
               id: cart.ProductId
             }, 
             trasaction
-          })))
+          }))
         })
 
-        //running all promises with promise all
+        //returning all promises with Promise.all
         return Promise.all([...promiseCart, ...promiseProduct])
       })
       .then(() => {
