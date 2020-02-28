@@ -18,7 +18,8 @@ module.exports =
       err.errors.forEach(error => {
         errors.push(error.message)
       })
-    } else errors.push(err)
+    } else errors.push(err.message)
+    console.log(err)
     res.status(status).json({errors})
     
   }

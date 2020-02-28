@@ -20,6 +20,6 @@ router.get('/:productId', CartController.findOne)
 router.put('/:productId/update', CartController.update)
 
 //delete user's cart
-router.delete('/productId/delete', CartController.delete)
+router.delete('/:productId/delete', CartController.delete)
 
 module.exports = router

@@ -30,8 +30,7 @@ class CartController {
 
   static create(req, res, next) {
     const { currentUserId } = req
-    const { productId } = req.params
-    const { quantity, total_price } = req.body
+    const { productId, quantity, total_price } = req.body
     Cart.create({
       UserId: currentUserId,
       ProductId: productId,
@@ -86,7 +85,7 @@ class CartController {
       let promiseProduct = []
 
       //using sequelize transaction
-      sequelize.trasaction(trasaction => {
+      sequelize.transaction(transaction => {
 
         //pushing array of promises based on the carts
         carts.forEach(cart => {
@@ -95,14 +94,14 @@ class CartController {
               UserId: cart.UserId,
               ProductId: cart.ProductId
             },
-            trasaction
+            transaction
           }))
           promiseProduct.push(Product.decrement('stock', {
             by: cart.quantity,
             where: {
               id: cart.ProductId
             }, 
-            trasaction
+            transaction
           }))
         })
 
